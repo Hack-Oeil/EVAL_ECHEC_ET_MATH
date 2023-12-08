@@ -1,0 +1,27 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice PHP</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="mt-4 container">
+       {% if flag %}
+             <div class="alert alert-success">{{ flag }}</div>
+        {% elseif success %}
+             <div class="alert alert-success">{{ success }}</div>
+        {% elseif error %}
+            <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+        <form method="post" class="text-center">
+            <div class="alert alert-info">Si votre calcul retourne le mot "FLAG" vous obtiendrez le véritable flag !</div>
+            <p>
+                Créez vos formules mathématiques dans le champ et laissez notre serveur vous donner le résultat.
+            </p>
+            <input type="text" name="calc" class="form-control" value="{{ calc }}" pattern="[0-9\+\*\.\-\(\)\^\/]+">
+            <input type="submit" class="mt-4 btn btn-primary" value="calculer">
+        </form>
+    </div>
+</body>
+</html>
