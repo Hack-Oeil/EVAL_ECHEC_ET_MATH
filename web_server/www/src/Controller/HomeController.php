@@ -14,7 +14,7 @@ class HomeController extends AbstractController
         $success = null;
         $error = null;
         
-        if(isset($_POST['calc']) && !empty($_POST['calc'])) {
+        if(isset($_POST['calc']) && !empty($_POST['calc']) && is_string($_POST['calc'])) {
             $calc = $_POST['calc'];
             if(preg_match('/[0-9\+\*\(\)\.^]/', $_POST['calc'])) {
                 try {
